@@ -7,7 +7,7 @@ const Conversations = () => {
  
  return (
     <div className="py-2 flex flex-col overflow-auto">
-    {conversations.map( (conversation,idx) =>
+    {!loading && conversations.map( (conversation,idx) =>
 <Conversation key ={conversation._id}
 conversation = {conversation}
 lastIndex = {idx === conversation.length - 1} />

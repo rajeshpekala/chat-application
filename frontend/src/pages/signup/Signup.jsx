@@ -34,7 +34,9 @@ const Signup = () => {
         <form onSubmit={handleSubmit}>
           <div>
             <label className="label p-2">
-              <span className="text-base label-text text-white">Full Name</span>
+              <span className="text-base label-text text-white font-semibold">
+                Full Name
+              </span>
             </label>
             <input
               type="text"
@@ -48,9 +50,11 @@ const Signup = () => {
           </div>
           <div>
             <label className="label p-2">
-              <span className="text-base label-text text-white">UserName</span>
+              <span className="text-base label-text text-white font-semibold">
+                UserName
+              </span>
             </label>
-            < input
+            <input
               type="text"
               value={inputs.username}
               onChange={(e) =>
@@ -62,7 +66,9 @@ const Signup = () => {
           </div>
           <div>
             <label className="label p-2">
-              <span className="text-base label-text text-white">Password</span>
+              <span className="text-base label-text text-white font-semibold">
+                Password
+              </span>
             </label>
             <input
               type="password"
@@ -76,7 +82,7 @@ const Signup = () => {
           </div>
           <div>
             <label className="label p-2">
-              <span className="text-base label-text text-white">
+              <span className="text-base label-text text-white font-semibold">
                 Confirm Password
               </span>
             </label>
@@ -90,18 +96,25 @@ const Signup = () => {
               className="w-full input input-bordered h-10"
             />
           </div>
-          <GenderCheckBox onCheckboxChange = {handleCheckbox} selectedGender = {inputs.gender} />
+          <GenderCheckBox
+            onCheckboxChange={handleCheckbox}
+            selectedGender={inputs.gender}
+          />
 
           <Link
             to="/login"
-            className="text-sm hover :underline text-white hover:text-blue-600  inline-block"
+            className="text-sm hover :underline text-white hover:text-blue-600  inline-block font-semibold"
           >
             Already have an account? Login
           </Link>
           <div>
-            <button className="btn btn-block btn-sm mt-2"
-            disabled = {loading}>{
-           loading ?<span className="loading loading-spinner"></span> : "Signup"}</button>
+            <button className="btn btn-block btn-sm mt-2" disabled={loading}>
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Signup"
+              )}
+            </button>
           </div>
         </form>
       </div>

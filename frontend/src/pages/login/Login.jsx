@@ -22,7 +22,9 @@ const handleSubmit = async (e) => {
         <form onSubmit={handleSubmit}>
           <div>
             <label className="label p-2">
-              <span className="text-base label-text text-white">UserName</span>
+              <span className="text-base label-text text-white font-semibold">
+                UserName
+              </span>
             </label>
             <input
               type="text"
@@ -36,7 +38,9 @@ const handleSubmit = async (e) => {
           </div>
           <div>
             <label className="label p-2">
-              <span className="text-base label-text text-white">Password</span>
+              <span className="text-base label-text text-white font-semibold">
+                Password
+              </span>
             </label>
             <input
               type="text"
@@ -50,13 +54,17 @@ const handleSubmit = async (e) => {
           </div>
           <Link
             to="/signup"
-            className="text-sm hover :underline text-white hover:text-blue-600 mt-2 inline-block"
+            className="text-sm hover :underline text-white hover:text-blue-600 mt-2 inline-block font-semibold"
           >
             {"Don't"} have an account? Signup
           </Link>
           <div>
-            <button className="btn btn-block btn-sm mt-2" disabled ={loading}>
-              {loading ? <span className="loading loading-spinner"></span> : "Login"}
+            <button className="btn btn-block btn-sm mt-2" disabled={loading}>
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Login"
+              )}
             </button>
           </div>
         </form>
