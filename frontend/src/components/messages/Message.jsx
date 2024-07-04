@@ -18,7 +18,7 @@ const Message = ({message}) => {
         <div className="w-12">
           <img
           className=""
-            alt="Bubble copmponent"
+            alt="Bubble component"
             src={profilePic}
           />
         </div>
