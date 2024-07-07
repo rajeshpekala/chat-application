@@ -44,7 +44,7 @@ const Signup = () => {
               onChange={(e) =>
                 SetInputs({ ...inputs, fullName: e.target.value })
               }
-              placeholder="Rajesh Patel"
+              placeholder="Enter your FullName here.."
               className="w-full input input-bordered h-10"
             />
           </div>
@@ -60,7 +60,7 @@ const Signup = () => {
               onChange={(e) =>
                 SetInputs({ ...inputs, username: e.target.value })
               }
-              placeholder="prem143"
+              placeholder="Enter your UserName here.."
               className="w-full input input-bordered h-10"
             />
           </div>
@@ -103,9 +103,12 @@ const Signup = () => {
 
           <Link
             to="/login"
-            className="text-sm hover :underline text-white hover:text-blue-600  inline-block font-semibold"
+            className="text-sm hover :underline text-white   inline-block font-semibold"
           >
-            Already have an account? Login
+            Already have an account?{" "}
+            <span className="text-xl font-bold underline  hover:text-violet-600">
+              Login
+            </span>
           </Link>
           <div>
             <button className="btn btn-block btn-sm mt-2" disabled={loading}>
