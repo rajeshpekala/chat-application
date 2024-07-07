@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useLogin from "../../hooks/useLogin";
+import usePasswordToggle from "../../hooks/usePasswordToggle";
 
 
 const Login = () => {
 
 const [username,setUsername] = useState("")
 const [password,setPassword] = useState("")
+const [passwordInputType, TogglePasswordIcon] = usePasswordToggle();
 
 const {loading,login} = useLogin()
 
@@ -36,14 +38,14 @@ const handleSubmit = async (e) => {
               }}
             />
           </div>
-          <div>
+          <div className="relative">
             <label className="label p-2">
               <span className="text-base label-text text-white font-semibold">
                 Password
               </span>
             </label>
             <input
-              type="text"
+              type={passwordInputType}
               placeholder="Enter Password"
               className="w-full input input-bordered h-10"
               value={password}
@@ -51,6 +53,9 @@ const handleSubmit = async (e) => {
                 setPassword(e.target.value);
               }}
             />
+            <span className="absolute cursor-pointer z-10 right-2 top-12">
+              {TogglePasswordIcon}
+            </span>
           </div>
           <Link
             to="/signup"
