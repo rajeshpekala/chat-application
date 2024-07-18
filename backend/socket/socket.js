@@ -38,4 +38,4 @@ io.on("connection", (socket) => {
   });
 });
 
-export { io }; // Export the 'io' instance to be used in other parts of your application
+export { io, server }; // Export both 'io' and 'server' instances

@@ -6,7 +6,7 @@ import authRoutes from "./routes/authroutes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import connectToMongodb from "./db/connectToMongodb.js";
-import { io } from "./socket/socket.js"; // Import the 'io' instance
+import { io, server } from "./socket/socket.js"; // Import both 'io' and 'server' instances
 
 dotenv.config();
 const __dirname = path.resolve();
