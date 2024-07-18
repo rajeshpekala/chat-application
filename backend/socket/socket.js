@@ -3,7 +3,6 @@ import http from "http";
 import express from "express";
 
 const app = express();
-
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -39,8 +38,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(5000, () => {
-  console.log("Server listening on port 5000");
-});
-
-export { app, io, server };
+export { io }; // Export the 'io' instance to be used in other parts of your application
