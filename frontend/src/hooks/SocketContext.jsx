@@ -19,17 +19,20 @@ export const SocketContextProvider = ({ children }) => {
         query: {
           userId: authUser._id,
         },
-        secure:true,
+        transports: ["websocket"], // Explicitly use WebSocket
+        secure: true,
       });
 
       setSocket(socket);
 
-      // socket.on() is used to listen to the events. can be used both on client and server side
       socket.on("getOnlineUsers", (users) => {
         setOnlineUsers(users);
       });
 
-      return () => socket.close();
+      return () => {
+        socket.off("getOnlineUsers"); // Remove event listener
+        socket.close(); // Close socket connection
+      };
     } else {
       if (socket) {
         socket.close();
